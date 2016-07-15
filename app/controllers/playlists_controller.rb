@@ -1,5 +1,6 @@
 class PlaylistsController < ApplicationController
   def index
+    @playlists = Playlist.all
   end
 
   def new
@@ -17,6 +18,19 @@ class PlaylistsController < ApplicationController
 
   def show
     @playlist = playlist_for_page
+  end
+
+  def edit
+    @playlist = playlist_for_page
+  end
+
+  def update
+    @playlist = playlist_for_page
+    if @playlist.update_attributes(playlist_params)
+      redirect_to @playlist
+    else
+      render :edit
+    end
   end
 
   private
