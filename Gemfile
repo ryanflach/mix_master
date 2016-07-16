@@ -30,6 +30,12 @@ gem 'unicorn'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
+# Use OmniAuth for user authentication through third-party sites
+gem 'omniauth-oauth2'
+
+# Use Figaro to manage keys from Spotify
+gem 'figaro'
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
